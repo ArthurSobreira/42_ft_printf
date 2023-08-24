@@ -11,6 +11,7 @@ GREEN = "\033[32m"
 RED = "\033[31m"
 CYAN = "\033[35m"
 YELLOW = "\033[33m"
+VIOLATE = "\033[38;5;208m"
 COLOR_LIMITER = "\033[0m"
 
 SOURCES = \
@@ -67,11 +68,14 @@ all: $(BIN_PATH) $(NAME)
 
 $(BIN_PATH)%.o: $(SOURCES_PATH)%.c
 	@echo $(GREEN)[Compiling]$(COLOR_LIMITER) $(YELLOW)$(notdir $(<))...$(COLOR_LIMITER)
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER_PATH)
+	@$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER_PATH)
 
 $(NAME): $(OBJECTS) $(BONUS_OBJECTS)
-	@echo $(CYAN)[Generating $(NAME)]$(COLOR_LIMITER)
-	ar rcs $(NAME) $?
+	@echo $(CYAN)[--------------------------------------]$(COLOR_LIMITER)
+	@echo $(CYAN)[  $(NAME) Was Generated Successfully!!  ]$(COLOR_LIMITER)
+	@echo $(CYAN)[--------------------------------------]$(COLOR_LIMITER)
+	@echo " "
+	@ar rcs $(NAME) $?
 
 $(BIN_PATH):
 	@mkdir -p $(BIN_PATH)
