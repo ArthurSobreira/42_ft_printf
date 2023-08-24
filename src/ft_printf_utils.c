@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 13:30:56 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/23 13:45:25 by arsobrei         ###   ########.fr       */
+/*   Created: 2023/08/24 10:42:01 by arsobrei          #+#    #+#             */
+/*   Updated: 2023/08/24 11:58:40 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
-
-#endif
+void	ft_putstr(char *str)
+{
+	write(1, str, ft_strlen(str));
+}
