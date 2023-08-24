@@ -83,7 +83,6 @@ clean:
 fclean: clean
 	@echo $(RED)[Removing $(NAME)...]$(COLOR_LIMITER)
 	@rm -f $(NAME)
-	@rm -f libft_test
 
 re: fclean all
 
