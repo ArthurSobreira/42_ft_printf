@@ -1,9 +1,12 @@
 NAME = libftprintf.a
+LIB_NAME = libft/libft.a
 CFLAGS = -Wall -Wextra -Werror
 
 # Path Definition
 BIN_PATH = ./bin/
-HEADER_PATH = ./
+SOURCES_PATH = ./src/
+LIB_BIN_PATH = ./libft/bin/
+HEADER_PATH = ./include/
 
 # Colors Definition
 GREEN = "\033[32m"
@@ -13,39 +16,49 @@ YELLOW = "\033[33m"
 VIOLATE = "\033[38;5;208m"
 COLOR_LIMITER = "\033[0m"
 
-SOURCES = ft_printf.c
+SOURCES = \
+	ft_printf.c \
+	ft_printf_utils.c \
 
 OBJECTS = $(addprefix $(BIN_PATH), $(SOURCES:%.c=%.o))
 
-all: $(BIN_PATH) $(NAME)
+all: libft $(BIN_PATH) $(NAME)
 
-$(BIN_PATH)%.o: %.c
+libft:
+	@make -C ./libft --no-print-directory
+	@cp $(LIB_NAME) $(NAME)
+
+$(BIN_PATH)%.o: $(SOURCES_PATH)%.c
 	@echo $(GREEN)[Compiling]$(COLOR_LIMITER) $(YELLOW)$(<)...$(COLOR_LIMITER)
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER_PATH)
+	@$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER_PATH)
 
 $(NAME): $(OBJECTS)
-	@echo $(CYAN)[Generating $(NAME)]$(COLOR_LIMITER)
-	ar rcs $(NAME) $?
+	@echo $(CYAN) -------------------------------------------- $(COLOR_LIMITER)
+	@echo $(CYAN)"| libftprintf.a Was Generated Successfully!! |"$(COLOR_LIMITER)
+	@echo $(CYAN) -------------------------------------------- $(COLOR_LIMITER)
+	@ar rcs $(NAME) $?
 
 $(BIN_PATH):
-	mkdir -p $(BIN_PATH)
+	@mkdir -p $(BIN_PATH)
 
 clean:
 	@echo $(RED)[Removing Objects...]$(COLOR_LIMITER)
-	@rm -rf $(BIN_PATH)
+	@rm -rf $(BIN_PATH) $(LIB_BIN_PATH)
 
 fclean: clean
-	@echo $(RED)[Removing $(NAME)...]$(COLOR_LIMITER)
-	@rm -f $(NAME)
+	@echo $(RED)[Removing $(notdir $(NAME))...]$(COLOR_LIMITER)
+	@rm -f $(NAME) $(LIB_NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re libft
 
 # Just for Test (delete later)
-run: all
-	@echo $(VIOLATE)[ Runing main.c ]$(COLOR_LIMITER)
-	@$(CC) $(CFLAGS) -lbsd main.c $(NAME) && ./a.out
+run:
+	@echo $(VIOLATE) -------------------------------------------- $(COLOR_LIMITER)
+	@echo $(VIOLATE)"| ------------- Runing main.c -------------- |"$(COLOR_LIMITER)
+	@echo $(VIOLATE) -------------------------------------------- $(COLOR_LIMITER)
+	@$(CC) $(CFLAGS) main.c -I $(HEADER_PATH) -lbsd $(NAME) && ./a.out
 
 remove:
 	@echo $(RED)[Removing a.out...]$(COLOR_LIMITER)
