@@ -3,7 +3,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 # Path Definition
 SOURCES_PATH = ./src/
-HEADER_PATH = ./include/
+HEADER_PATH = ../include/
 BIN_PATH = ./bin/
 
 # Colors Definition 
@@ -71,9 +71,9 @@ $(BIN_PATH)%.o: $(SOURCES_PATH)%.c
 	@$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER_PATH)
 
 $(NAME): $(OBJECTS) $(BONUS_OBJECTS)
-	@echo $(CYAN)[--------------------------------------]$(COLOR_LIMITER)
-	@echo $(CYAN)[  $(NAME) Was Generated Successfully!!  ]$(COLOR_LIMITER)
-	@echo $(CYAN)[--------------------------------------]$(COLOR_LIMITER)
+	@echo $(CYAN) --------------------------------------- $(COLOR_LIMITER)
+	@echo $(CYAN)"| libft.a Was Generated Successfully!! |"$(COLOR_LIMITER)
+	@echo $(CYAN) --------------------------------------- $(COLOR_LIMITER)
 	@echo " "
 	@ar rcs $(NAME) $?
 
