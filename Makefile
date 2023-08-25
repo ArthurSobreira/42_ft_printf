@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror
 BIN_PATH = ./bin/
 SOURCES_PATH = ./src/
 LIB_BIN_PATH = ./libft/bin/
-HEADER_PATH = ./include/
+HEADER_PATH = ./includes/
 
 # Colors Definition
 GREEN = "\033[32m"
