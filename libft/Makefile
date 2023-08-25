@@ -3,7 +3,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 # Path Definition
 SOURCES_PATH = ./src/
-HEADER_PATH = ../include/
+HEADER_PATH = ../includes/
 BIN_PATH = ./bin/
 
 # Colors Definition 
