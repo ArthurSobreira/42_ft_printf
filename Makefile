@@ -55,7 +55,7 @@ re: fclean all
 # Just for test (delete later)
 run:
 	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
-	@echo $(GREEN)"| ------------- Runing main.c -------------- |"$(COLOR_LIMITER)
+	@echo $(GREEN)"| -------------- Runing Tests -------------- |"$(COLOR_LIMITER)
 	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
 	@$(CC) $(CFLAGS) main.c -I $(HEADER_PATH) -lbsd $(NAME) && ./a.out
 
