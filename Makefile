@@ -53,7 +53,7 @@ re: fclean all
 
 .PHONY: all clean fclean re libft
 
-# Just for Test (delete later)
+# Just for test (delete later)
 run:
 	@echo $(VIOLATE) -------------------------------------------- $(COLOR_LIMITER)
 	@echo $(VIOLATE)"| ------------- Runing main.c -------------- |"$(COLOR_LIMITER)
