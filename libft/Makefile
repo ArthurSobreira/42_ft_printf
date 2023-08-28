@@ -9,7 +9,6 @@ BIN_PATH = ./bin/
 # Colors Definition 
 GREEN = "\033[32m"
 RED = "\033[31m"
-CYAN = "\033[35m"
 YELLOW = "\033[33m"
 VIOLATE = "\033[38;5;208m"
 COLOR_LIMITER = "\033[0m"
@@ -71,9 +70,9 @@ $(BIN_PATH)%.o: $(SOURCES_PATH)%.c
 	@$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER_PATH)
 
 $(NAME): $(OBJECTS) $(BONUS_OBJECTS)
-	@echo $(CYAN) --------------------------------------- $(COLOR_LIMITER)
-	@echo $(CYAN)"| libft.a Was Generated Successfully!! |"$(COLOR_LIMITER)
-	@echo $(CYAN) --------------------------------------- $(COLOR_LIMITER)
+	@echo $(VIOLATE) --------------------------------------- $(COLOR_LIMITER)
+	@echo $(VIOLATE)"| libft.a Was Generated Successfully!! |"$(COLOR_LIMITER)
+	@echo $(VIOLATE) --------------------------------------- $(COLOR_LIMITER)
 	@echo " "
 	@ar rcs $(NAME) $?
 
