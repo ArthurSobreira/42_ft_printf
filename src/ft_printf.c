@@ -6,20 +6,20 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:13:26 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/24 15:21:25 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/28 18:52:31 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_check_format_specifier(va_list args, char cur_format);
+int	ft_check_format_specifier(va_list args, char current_format);
 
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	size_t	index;
+	char	current_format;
 	int		lenght;
-	char	cur_format;
 
 	if (format == NULL)
 		return (-1);
@@ -31,8 +31,8 @@ int	ft_printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			index++;
-			cur_format = format[index];
-			lenght += ft_check_format_specifier(args, cur_format);
+			current_format = format[index];
+			lenght += ft_check_format_specifier(args, current_format);
 		}
 		else
 			lenght += ft_putchar(format[index]);
@@ -42,14 +42,16 @@ int	ft_printf(const char *format, ...)
 	return (lenght);
 }
 
-int	ft_check_format_specifier(va_list args, char cur_format)
+int	ft_check_format_specifier(va_list args, char current_format)
 {
 	size_t	count;
 
 	count = 0;
-	if (cur_format == 'c')
+	if (current_format == 'c')
 		count += ft_putchar((char)va_arg(args, int));
-	else if (cur_format == 's')
+	else if (current_format == 's')
 		count += ft_putstr(va_arg(args, char *));
+	else if (current_format == '%')
+		count += ft_putchar('%');
 	return (count);
 }
