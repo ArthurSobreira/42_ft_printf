@@ -11,7 +11,6 @@ HEADER_PATH = ./includes/
 # Colors Definition
 GREEN = "\033[32m"
 RED = "\033[31m"
-CYAN = "\033[35m"
 YELLOW = "\033[33m"
 VIOLATE = "\033[38;5;208m"
 COLOR_LIMITER = "\033[0m"
@@ -29,13 +28,13 @@ libft:
 	@cp $(LIB_NAME) $(NAME)
 
 $(BIN_PATH)%.o: $(SOURCES_PATH)%.c
-	@echo $(GREEN)[Compiling]$(COLOR_LIMITER) $(YELLOW)$(<)...$(COLOR_LIMITER)
+	@echo $(GREEN)[Compiling]$(COLOR_LIMITER) $(YELLOW)$(notdir $(<))...$(COLOR_LIMITER)
 	@$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER_PATH)
 
 $(NAME): $(OBJECTS)
-	@echo $(CYAN) -------------------------------------------- $(COLOR_LIMITER)
-	@echo $(CYAN)"| libftprintf.a Was Generated Successfully!! |"$(COLOR_LIMITER)
-	@echo $(CYAN) -------------------------------------------- $(COLOR_LIMITER)
+	@echo $(VIOLATE) -------------------------------------------- $(COLOR_LIMITER)
+	@echo $(VIOLATE)"| libftprintf.a Was Generated Successfully!! |"$(COLOR_LIMITER)
+	@echo $(VIOLATE) -------------------------------------------- $(COLOR_LIMITER)
 	@ar rcs $(NAME) $?
 
 $(BIN_PATH):
@@ -55,9 +54,9 @@ re: fclean all
 
 # Just for test (delete later)
 run:
-	@echo $(VIOLATE) -------------------------------------------- $(COLOR_LIMITER)
-	@echo $(VIOLATE)"| ------------- Runing main.c -------------- |"$(COLOR_LIMITER)
-	@echo $(VIOLATE) -------------------------------------------- $(COLOR_LIMITER)
+	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
+	@echo $(GREEN)"| ------------- Runing main.c -------------- |"$(COLOR_LIMITER)
+	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
 	@$(CC) $(CFLAGS) main.c -I $(HEADER_PATH) -lbsd $(NAME) && ./a.out
 
 remove: fclean
