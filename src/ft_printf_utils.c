@@ -12,7 +12,21 @@
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *str)
+int	ft_putchar(char c)
 {
-	write(1, str, ft_strlen(str));
+	write(1, &c, 1);
+	return (1);
+}
+
+int	ft_putstr(char *str)
+{
+	size_t	lenght;
+
+	if (str == NULL)
+	{
+		return (ft_putstr("(null)"));
+	}
+	lenght = ft_strlen(str);
+	write(1, str, lenght);
+	return (lenght);
 }
