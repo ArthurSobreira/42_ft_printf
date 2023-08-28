@@ -60,6 +60,6 @@ run:
 	@echo $(VIOLATE) -------------------------------------------- $(COLOR_LIMITER)
 	@$(CC) $(CFLAGS) main.c -I $(HEADER_PATH) -lbsd $(NAME) && ./a.out
 
-remove:
+remove: fclean
 	@echo $(RED)[Removing a.out...]$(COLOR_LIMITER)
 	@rm -f a.out 
