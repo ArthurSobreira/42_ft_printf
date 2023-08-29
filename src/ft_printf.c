@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:13:26 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/29 14:39:44 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/29 20:08:48 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ static int	ft_check_format_specifier(va_list args, char current_format)
 		count += ft_putchar((char)va_arg(args, int));
 	else if (current_format == 's')
 		count += ft_putstr(va_arg(args, char *));
+	else if (current_format == 'p')
+		count += ft_putptr(va_arg(args, unsigned long), HEXA_LOW_BASE);
 	else if (current_format == 'd' || current_format == 'i')
 		count += ft_putnbr_base(va_arg(args, int), DECIMAL_BASE);
 	else if (current_format == 'u')
