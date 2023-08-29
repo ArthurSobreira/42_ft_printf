@@ -6,13 +6,13 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:13:26 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/28 18:52:31 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/28 20:04:47 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_check_format_specifier(va_list args, char current_format);
+static int	ft_check_format_specifier(va_list args, char current_format);
 
 int	ft_printf(const char *format, ...)
 {
@@ -42,7 +42,7 @@ int	ft_printf(const char *format, ...)
 	return (lenght);
 }
 
-int	ft_check_format_specifier(va_list args, char current_format)
+static int	ft_check_format_specifier(va_list args, char current_format)
 {
 	size_t	count;
 
@@ -51,6 +51,8 @@ int	ft_check_format_specifier(va_list args, char current_format)
 		count += ft_putchar((char)va_arg(args, int));
 	else if (current_format == 's')
 		count += ft_putstr(va_arg(args, char *));
+	else if (current_format == 'd' || current_format == 'i')
+		count += ft_putnbr_base(va_arg(args, int), DECIMAL_BASE);
 	else if (current_format == '%')
 		count += ft_putchar('%');
 	return (count);
