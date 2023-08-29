@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:09:59 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/29 10:50:07 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/29 20:05:54 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_putnbr_base(long int number, char *base)
 {
-	int		lenght;
-	int		base_lenght;
+	int	lenght;
+	int	base_lenght;
 
 	lenght = 0;
 	base_lenght = ft_strlen(base);
@@ -32,7 +32,7 @@ int	ft_putnbr_base(long int number, char *base)
 	}
 	if (number >= base_lenght)
 	{
-		lenght += ft_putnbr_base(number / base_lenght, base);
+		lenght += ft_putnbr_base((number / base_lenght), base);
 	}
 	lenght += ft_putchar(base[number % base_lenght]);
 	return (lenght);
