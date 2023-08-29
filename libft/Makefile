@@ -9,7 +9,6 @@ BIN_PATH = ./bin/
 # Colors Definition 
 GREEN = "\033[32m"
 RED = "\033[31m"
-YELLOW = "\033[33m"
 VIOLATE = "\033[38;5;208m"
 COLOR_LIMITER = "\033[0m"
 
@@ -66,7 +65,7 @@ BONUS_OBJECTS = $(addprefix $(BIN_PATH), $(BONUS_SOURCES:%.c=%.o))
 all: $(BIN_PATH) $(NAME)
 
 $(BIN_PATH)%.o: $(SOURCES_PATH)%.c
-	@echo $(GREEN)[Compiling]$(COLOR_LIMITER) $(YELLOW)$(notdir $(<))...$(COLOR_LIMITER)
+	@echo $(GREEN)[Compiling]$(COLOR_LIMITER) $(notdir $(<))...
 	@$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER_PATH)
 
 $(NAME): $(OBJECTS) $(BONUS_OBJECTS)
