@@ -11,7 +11,6 @@ HEADER_PATH = ./includes/
 # Colors Definition
 GREEN = "\033[32m"
 RED = "\033[31m"
-YELLOW = "\033[33m"
 VIOLATE = "\033[38;5;208m"
 COLOR_LIMITER = "\033[0m"
 
@@ -26,11 +25,13 @@ OBJECTS = $(addprefix $(BIN_PATH), $(SOURCES:%.c=%.o))
 all: libft $(BIN_PATH) $(NAME)
 
 libft:
+ifeq ($(wildcard $(LIB_NAME)),)
 	@make -C ./libft --no-print-directory
 	@cp $(LIB_NAME) $(NAME)
+endif
 
 $(BIN_PATH)%.o: $(SOURCES_PATH)%.c
-	@echo $(GREEN)[Compiling]$(COLOR_LIMITER) $(YELLOW)$(notdir $(<))...$(COLOR_LIMITER)
+	@echo $(GREEN)[Compiling]$(COLOR_LIMITER) $(notdir $(<))...
 	@$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER_PATH)
 
 $(NAME): $(OBJECTS)
@@ -55,11 +56,11 @@ re: fclean all
 .PHONY: all clean fclean re libft
 
 # Just for test (delete later)
-run:
+run: all
 	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
 	@echo $(GREEN)"| -------------- Runing Tests -------------- |"$(COLOR_LIMITER)
 	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
-	@$(CC) $(CFLAGS) main.c -I $(HEADER_PATH) -lbsd $(NAME) && ./a.out
+	@$(CC) $(CFLAGS) main.c $(NAME) -I $(HEADER_PATH) && ./a.out
 
 remove: fclean
 	@echo $(RED)[Removing a.out...]$(COLOR_LIMITER)
