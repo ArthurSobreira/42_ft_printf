@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:30:56 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/28 20:04:53 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/29 10:07:02 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 
 // Macros Definitions
 # define DECIMAL_BASE "0123456789"
+# define HEXA_LOW_BASE "0123456789abcdef"
+# define HEXA_UP_BASE "0123456789ABCDEF"
 
 // Functions Prototypes
 int	ft_printf(const char *format, ...);
