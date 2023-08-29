@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:29:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/28 19:30:01 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/29 13:51:32 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,20 @@ void	test6(void)
 	printf("original return: %d\n", original_return);
 }
 
+void	test7(void)
+{
+	int	my_return;
+	int	original_return;
+
+	int	x = 1234;
+
+	my_return = ft_printf("low hexa: 0x%x upper hexa: 0X%X\n", x, x);  // My Function
+	printf("my return: %d\n\n", my_return);
+
+	original_return = printf("low hexa: 0x%x upper hexa: 0X%X\n", x, x);  // Original
+	printf("original return: %d\n", original_return);
+}
+
 int main(void)
 {
 	printf("========== Test 01 ==========\n");
@@ -115,5 +129,7 @@ int main(void)
 	test5();
 	printf("\n========== Test 06 ==========\n");
 	test6();
+	printf("\n========== Test 07 ==========\n");
+	test7();
 	return (0);
 }
