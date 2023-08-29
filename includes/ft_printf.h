@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:30:56 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/29 15:45:56 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/29 19:48:40 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 int	ft_printf(const char *format, ...);
 int	ft_putchar(char c);
 int	ft_putnbr_base(long int number, char *base);
+int	ft_putptr(unsigned long number);
 int	ft_putstr(char *str);
 
 #endif
