@@ -18,6 +18,7 @@ SOURCES = \
 	ft_printf.c \
 	ft_putchar.c \
 	ft_putnbr_base.c \
+	ft_putptr.c \
 	ft_putstr.c \
 
 OBJECTS = $(addprefix $(BIN_PATH), $(SOURCES:%.c=%.o))
