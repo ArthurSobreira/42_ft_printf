@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:13:26 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/29 20:08:48 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/30 19:17:33 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_printf(const char *format, ...)
 
 static int	ft_check_format_specifier(va_list args, char current_format)
 {
-	size_t	count;
+	int	count;
 
 	count = 0;
 	if (current_format == 'c')
