@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 19:45:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/29 20:10:09 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/29 20:15:08 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ int	ft_putptr(unsigned long number, char *base)
 	else
 		lenght += ft_putstr("0x");
 	lenght += ft_putchar(base[number % base_lenght]);
-	return (lenght);	
+	return (lenght);
 }
