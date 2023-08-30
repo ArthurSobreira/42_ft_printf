@@ -81,7 +81,7 @@ run_m: all
 	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
 	@$(CC) $(CFLAGS) tests_mandatory.c $(NAME) -I $(MANDATORY_HEADER_PATH) && ./a.out
 
-run_b: all
+run_b: bonus
 	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
 	@echo $(GREEN)"| ----------- Runing Bonus Tests ----------- |"$(COLOR_LIMITER)
 	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
