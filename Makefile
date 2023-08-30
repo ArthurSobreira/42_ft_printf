@@ -7,6 +7,8 @@ BIN_PATH = ./bin/
 LIB_BIN_PATH = ./libft/bin/
 MANDATORY_HEADER_PATH = ./mandatory/includes/
 MANDATORY_SOURCES_PATH = ./mandatory/src/
+BONUS_HEADER_PATH = ./bonus/includes/
+BONUS_SOURCES_PATH = ./bonus/src/
 
 # Colors Definition
 GREEN = "\033[32m"
@@ -21,7 +23,15 @@ SOURCES = \
 	ft_putptr.c \
 	ft_putstr.c \
 
+BONUS_SOURCES = \
+	ft_printf_bonus.c \
+	ft_putchar_bonus.c \
+	ft_putnbr_base_bonus.c \
+	ft_putptr_bonus.c \
+	ft_putstr_bonus.c \
+
 OBJECTS = $(addprefix $(BIN_PATH), $(SOURCES:%.c=%.o))
+BONUS_OBJECTS = $(addprefix $(BIN_PATH), $(BONUS_SOURCES:%.c=%.o))
 
 all: libft $(BIN_PATH) $(NAME)
 
@@ -45,6 +55,12 @@ $(NAME): $(OBJECTS)
 $(BIN_PATH):
 	@mkdir -p $(BIN_PATH)
 
+bonus: libft
+	@make --no-print-directory \
+	OBJECTS="$(BONUS_OBJECTS)" \
+	MANDATORY_HEADER_PATH="$(BONUS_HEADER_PATH)" \
+	MANDATORY_SOURCES_PATH="$(BONUS_SOURCES_PATH)"\
+
 clean:
 	@echo $(RED)[Removing Objects...]$(COLOR_LIMITER)
 	@rm -rf $(BIN_PATH) $(LIB_BIN_PATH)
@@ -56,14 +72,20 @@ fclean: clean
 re: fclean
 	@make --no-print-directory
 
-.PHONY: all clean fclean re libft
+.PHONY: all clean fclean re libft bonus
 
 # Just for test (delete later)
-run: all
+run_m: all
 	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
-	@echo $(GREEN)"| -------------- Runing Tests -------------- |"$(COLOR_LIMITER)
+	@echo $(GREEN)"| --------- Runing Mandatory Tests --------- |"$(COLOR_LIMITER)
 	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
-	@$(CC) $(CFLAGS) main.c $(NAME) -I $(MANDATORY_HEADER_PATH) && ./a.out
+	@$(CC) $(CFLAGS) tests_mandatory.c $(NAME) -I $(MANDATORY_HEADER_PATH) && ./a.out
+
+run_b: all
+	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
+	@echo $(GREEN)"| ----------- Runing Bonus Tests ----------- |"$(COLOR_LIMITER)
+	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
+	@$(CC) $(CFLAGS) tests_bonus.c $(NAME) -I $(BONUS_HEADER_PATH) && ./a.out
 
 remove: fclean
 	@echo $(RED)[Removing a.out...]$(COLOR_LIMITER)
