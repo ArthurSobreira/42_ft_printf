@@ -4,9 +4,9 @@ CFLAGS = -Wall -Wextra -Werror
 
 # Path Definition
 BIN_PATH = ./bin/
-SOURCES_PATH = ./src/
 LIB_BIN_PATH = ./libft/bin/
-HEADER_PATH = ./includes/
+MANDATORY_HEADER_PATH = ./mandatory/includes/
+MANDATORY_SOURCES_PATH = ./mandatory/src/
 
 # Colors Definition
 GREEN = "\033[32m"
@@ -31,14 +31,15 @@ ifeq ($(wildcard $(LIB_NAME)),)
 	@cp $(LIB_NAME) $(NAME)
 endif
 
-$(BIN_PATH)%.o: $(SOURCES_PATH)%.c
+$(BIN_PATH)%.o: $(MANDATORY_SOURCES_PATH)%.c
 	@echo $(GREEN)[Compiling]$(COLOR_LIMITER) $(notdir $(<))...
-	@$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER_PATH)
+	@$(CC) $(CFLAGS) -c $< -o $@ -I $(MANDATORY_HEADER_PATH)
 
 $(NAME): $(OBJECTS)
 	@echo $(VIOLATE) -------------------------------------------- $(COLOR_LIMITER)
 	@echo $(VIOLATE)"| libftprintf.a Was Generated Successfully!! |"$(COLOR_LIMITER)
 	@echo $(VIOLATE) -------------------------------------------- $(COLOR_LIMITER)
+	@echo " "
 	@ar rcs $(NAME) $?
 
 $(BIN_PATH):
@@ -52,7 +53,8 @@ fclean: clean
 	@echo $(RED)[Removing $(notdir $(NAME))...]$(COLOR_LIMITER)
 	@rm -f $(NAME) $(LIB_NAME)
 
-re: fclean all
+re: fclean
+	@make --no-print-directory
 
 .PHONY: all clean fclean re libft
 
@@ -61,7 +63,7 @@ run: all
 	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
 	@echo $(GREEN)"| -------------- Runing Tests -------------- |"$(COLOR_LIMITER)
 	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
-	@$(CC) $(CFLAGS) main.c $(NAME) -I $(HEADER_PATH) && ./a.out
+	@$(CC) $(CFLAGS) main.c $(NAME) -I $(MANDATORY_HEADER_PATH) && ./a.out
 
 remove: fclean
 	@echo $(RED)[Removing a.out...]$(COLOR_LIMITER)
