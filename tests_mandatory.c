@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   tests_mandatory.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:29:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/30 12:10:08 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/31 11:21:34 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,10 +108,10 @@ void	test7(void)
 
 	int	x = 1234;
 
-	my_return = ft_printf("low hexa: 0x%x upper hexa: 0X%X\n", x, x);  // My Function
+	my_return = ft_printf("low hexa: %x upper hexa: %X\n", x, x);  // My Function
 	printf("my return: %d\n\n", my_return);
 
-	original_return = printf("low hexa: 0x%x upper hexa: 0X%X\n", x, x);  // Original
+	original_return = printf("low hexa: %x upper hexa: %X\n", x, x);  // Original
 	printf("original return: %d\n", original_return);
 }
 
