@@ -6,13 +6,13 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:13:26 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/31 11:46:13 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/31 12:07:09 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
 
-static int	ft_check_format_specifier(va_list args, char current_format, char flag);
+static int	ft_check_format(va_list args, char current_format, char flag);
 
 int	ft_printf(const char *format, ...)
 {
@@ -30,9 +30,10 @@ int	ft_printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			index++;
-			while (format[index] == '#' || format[index] == '+' || format[index] == ' ')
+			while (format[index] == '#' || format[index] == '+' \
+										|| format[index] == ' ')
 				index++;
-			length += ft_check_format_specifier(args, format[index], format[index - 1]);
+			length += ft_check_format(args, format[index], format[index - 1]);
 		}
 		else
 			length += ft_putchar(format[index]);
@@ -42,7 +43,7 @@ int	ft_printf(const char *format, ...)
 	return (length);
 }
 
-static int	ft_check_format_specifier(va_list args, char current_format, char flag)
+static int	ft_check_format(va_list args, char current_format, char flag)
 {
 	int	count;
 
