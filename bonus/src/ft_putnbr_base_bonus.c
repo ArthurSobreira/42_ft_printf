@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:09:59 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/31 11:46:57 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/31 11:54:20 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int	ft_putnbr_base(long int number, char *base)
 {
 	int	length;
-	int	base_lenght;
+	int	base_length;
 
 	length = 0;
-	base_lenght = ft_strlen(base);
+	base_length = ft_strlen(base);
 	if (number == -2147483648)
 	{
 		length += ft_putchar('-');
@@ -30,10 +30,10 @@ int	ft_putnbr_base(long int number, char *base)
 		length += ft_putchar('-');
 		number *= -1;
 	}
-	if (number >= base_lenght)
+	if (number >= base_length)
 	{
-		length += ft_putnbr_base((number / base_lenght), base);
+		length += ft_putnbr_base((number / base_length), base);
 	}
-	length += ft_putchar(base[number % base_lenght]);
+	length += ft_putchar(base[number % base_length]);
 	return (length);
 }
