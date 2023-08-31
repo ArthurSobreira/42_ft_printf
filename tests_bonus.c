@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:29:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/31 14:26:35 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/31 14:53:17 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,45 @@ void	test2(void)
 	printf("original return: %d\n", original_return);
 }
 
+void	test3(void)
+{
+	int	my_return;
+	int	original_return;
+
+	int	x = 4242;
+	int	y = 123;
+
+	my_return = ft_printf("value x: %+d | value y: %+i\n", x, y);  // My Function
+	printf("my return: %d\n\n", my_return);
+
+	original_return = printf("value x: %+d | value y: %+i\n", x, y);  // Original
+	printf("original return: %d\n", original_return);
+}
+
+void	test4(void)
+{
+	int	my_return;
+	int	original_return;
+
+	int	x = -4242;
+	int	y = 0;
+
+	my_return = ft_printf("value x: %+d | value y: %+i\n", x, y);  // My Function
+	printf("my return: %d\n\n", my_return);
+
+	original_return = printf("value x: %+d | value y: %+i\n", x, y);  // Original
+	printf("original return: %d\n", original_return);
+}
+
 int main(void)
 {
 	printf("=============== Test 01 ===============\n");
 	test1();
 	printf("=============== Test 02 ===============\n");
 	test2();
+	printf("=============== Test 03 ===============\n");
+	test3();
+	printf("=============== Test 04 ===============\n");
+	test4();
 	return (0);
 }
