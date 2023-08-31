@@ -59,7 +59,7 @@ BONUS_SOURCES = \
 	ft_lstnew_bonus.c \
 	ft_lstsize_bonus.c \
 
-OBJECTS = $(addprefix $(BIN_PATH), $(SOURCES:%.c=%.o))
+MANDATORY_OBJECTS = $(addprefix $(BIN_PATH), $(SOURCES:%.c=%.o))
 BONUS_OBJECTS = $(addprefix $(BIN_PATH), $(BONUS_SOURCES:%.c=%.o))
 
 all: $(BIN_PATH) $(NAME)
@@ -68,7 +68,7 @@ $(BIN_PATH)%.o: $(SOURCES_PATH)%.c
 	@echo $(GREEN)[Compiling]$(COLOR_LIMITER) $(notdir $(<))...
 	@$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER_PATH)
 
-$(NAME): $(OBJECTS) $(BONUS_OBJECTS)
+$(NAME): $(MANDATORY_OBJECTS) $(BONUS_OBJECTS)
 	@echo $(VIOLATE) --------------------------------------- $(COLOR_LIMITER)
 	@echo $(VIOLATE)"| libft.a Was Generated Successfully!! |"$(COLOR_LIMITER)
 	@echo $(VIOLATE) --------------------------------------- $(COLOR_LIMITER)
