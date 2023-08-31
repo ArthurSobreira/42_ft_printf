@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:30:56 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/31 14:44:15 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/31 15:22:09 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_printf(const char *format, ...);
 int	ft_putchar(char c);
 int	ft_puthexa(long int number, char *base, char flag);
 int	ft_putnbr_base(long int number, char *base);
-int	ft_putplus(long int number, char *base, char flag);
+int	ft_putplus_space(long int number, char *base, char flag);
 int	ft_putptr(unsigned long number, char *base);
 int	ft_putstr(char *str);
 
