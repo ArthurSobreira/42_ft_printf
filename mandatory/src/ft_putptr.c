@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 19:45:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/29 20:15:08 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/31 11:48:24 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 int	ft_putptr(unsigned long number, char *base)
 {
-	int	lenght;
-	int	base_lenght;
+	int	length;
+	int	base_length;
 
-	lenght = 0;
-	base_lenght = ft_strlen(base);
+	length = 0;
+	base_length = ft_strlen(base);
 	if (number == 0)
 	{
 		return (ft_putstr("(nil)"));
 	}
-	if (number >= (unsigned long)base_lenght)
+	if (number >= (unsigned long)base_length)
 	{
-		lenght += ft_putptr((number / base_lenght), base);
+		length += ft_putptr((number / base_length), base);
 	}
 	else
-		lenght += ft_putstr("0x");
-	lenght += ft_putchar(base[number % base_lenght]);
-	return (lenght);
+		length += ft_putstr("0x");
+	length += ft_putchar(base[number % base_length]);
+	return (length);
 }
