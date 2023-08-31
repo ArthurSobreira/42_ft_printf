@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 19:16:54 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/31 11:46:43 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/31 14:12:39 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,14 @@ int	ft_puthexa(long int number, char *base, char flag)
 	length = 0;
 	if (flag == '#')
 	{
-		length += ft_putstr("0x");
+		if (ft_strncmp(base, "0123456789abcdef", 16) == 0)
+		{
+			length += ft_putstr("0x");
+		}
+		else if (ft_strncmp(base, "0123456789ABCDEF", 16) == 0)
+		{
+			length += ft_putstr("0X");
+		}
 	}
 	length += ft_putnbr_base(number, base);
 	return (length);
