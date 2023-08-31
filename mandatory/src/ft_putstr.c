@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:09:06 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/28 19:09:17 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/31 11:48:36 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_putstr(char *str)
 {
-	int	lenght;
+	int	length;
 
 	if (str == NULL)
 	{
 		return (ft_putstr("(null)"));
 	}
-	lenght = ft_strlen(str);
-	write(1, str, lenght);
-	return (lenght);
+	length = ft_strlen(str);
+	write(1, str, length);
+	return (length);
 }
