@@ -6,12 +6,11 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:13:26 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/30 20:08:20 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/31 11:18:08 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
-#include <stdio.h> // DELETA ISSO
 
 static int	ft_check_format_specifier(va_list args, char current_format, char flag);
 
@@ -59,15 +58,10 @@ static int	ft_check_format_specifier(va_list args, char current_format, char fla
 		count += ft_putnbr_base(va_arg(args, int), DECIMAL_BASE);
 	else if (current_format == 'u')
 		count += ft_putnbr_base(va_arg(args, unsigned int), DECIMAL_BASE);
-		
-		
 	else if (current_format == 'x')
-		count += ft_puthexa_low(va_arg(args, unsigned int), flag);
-		
+		count += ft_puthexa(va_arg(args, unsigned int), HEXA_LOW_BASE, flag);
 	else if (current_format == 'X')
-		count += ft_putnbr_base(va_arg(args, unsigned int), HEXA_UP_BASE);
-
-		
+		count += ft_puthexa(va_arg(args, unsigned int), HEXA_UP_BASE, flag);
 	else if (current_format == '%')
 		count += ft_putchar('%');
 	return (count);
