@@ -28,6 +28,7 @@ BONUS_SOURCES = \
 	ft_putchar_bonus.c \
 	ft_puthexa_bonus.c \
 	ft_putnbr_base_bonus.c \
+	ft_putplus_bonus.c \
 	ft_putptr_bonus.c \
 	ft_putstr_bonus.c \
 
