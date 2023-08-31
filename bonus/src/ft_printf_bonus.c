@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:13:26 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/31 15:23:09 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/31 15:54:40 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	ft_printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			index++;
-			while (format[index] == '#' || format[index] == '+' \
-										|| format[index] == ' ')
+			while (format[index] == '#' || format[index] == '+'
+				|| format[index] == ' ')
 				index++;
 			length += ft_check_format(args, format[index], format[index - 1]);
 		}
