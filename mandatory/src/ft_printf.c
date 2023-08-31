@@ -6,13 +6,13 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:13:26 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/08/31 11:47:56 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/08/31 12:08:57 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_check_format_specifier(va_list args, char current_format);
+static int	ft_check_format(va_list args, char current_format);
 
 int	ft_printf(const char *format, ...)
 {
@@ -32,7 +32,7 @@ int	ft_printf(const char *format, ...)
 		{
 			index++;
 			current_format = format[index];
-			length += ft_check_format_specifier(args, current_format);
+			length += ft_check_format(args, current_format);
 		}
 		else
 			length += ft_putchar(format[index]);
@@ -42,7 +42,7 @@ int	ft_printf(const char *format, ...)
 	return (length);
 }
 
-static int	ft_check_format_specifier(va_list args, char current_format)
+static int	ft_check_format(va_list args, char current_format)
 {
 	int	count;
 
