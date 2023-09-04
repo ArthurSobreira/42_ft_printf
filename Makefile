@@ -16,6 +16,7 @@ RED = "\033[31m"
 VIOLATE = "\033[38;5;208m"
 COLOR_LIMITER = "\033[0m"
 
+# Sources Definition
 SOURCES = \
 	ft_printf.c \
 	ft_putchar.c \
@@ -32,10 +33,21 @@ BONUS_SOURCES = \
 	ft_putptr_bonus.c \
 	ft_putstr_bonus.c \
 
+# Objects Definition
 OBJECTS = $(addprefix $(BIN_PATH), $(SOURCES:%.c=%.o))
 BONUS_OBJECTS = $(addprefix $(BIN_PATH), $(BONUS_SOURCES:%.c=%.o))
 
+# Verification of Mandatory Files
+PRINTF_MANDATORY = ft_printf.o
+MANDATORY_CHECK = $(shell ar -t $(NAME) $(PRINTF_MANDATORY) 2>&1)
+
+# Verification of Bonus Files
+PRINTF_BONUS = ft_printf_bonus.o
+BONUS_CHECK = $(shell ar -t $(NAME) $(PRINTF_BONUS) 2>&1)
+
+ifneq ($(BONUS_CHECK), $(PRINTF_BONUS))
 all: libft $(BIN_PATH) $(NAME)
+endif
 
 libft:
 ifeq ($(wildcard $(LIB_NAME)),)
@@ -57,11 +69,19 @@ $(NAME): $(OBJECTS)
 $(BIN_PATH):
 	@mkdir -p $(BIN_PATH)
 
+ifeq ($(MANDATORY_CHECK), $(PRINTF_MANDATORY))
+bonus: fclean libft
+	@make --no-print-directory \
+	OBJECTS="$(BONUS_OBJECTS)" \
+	MANDATORY_HEADER_PATH="$(BONUS_HEADER_PATH)" \
+	MANDATORY_SOURCES_PATH="$(BONUS_SOURCES_PATH)"
+else
 bonus: libft
 	@make --no-print-directory \
 	OBJECTS="$(BONUS_OBJECTS)" \
 	MANDATORY_HEADER_PATH="$(BONUS_HEADER_PATH)" \
-	MANDATORY_SOURCES_PATH="$(BONUS_SOURCES_PATH)"\
+	MANDATORY_SOURCES_PATH="$(BONUS_SOURCES_PATH)"
+endif
 
 clean:
 	@echo $(RED)[Removing Objects...]$(COLOR_LIMITER)
