@@ -112,3 +112,4 @@ run_b: bonus
 remove: fclean
 	@echo $(RED)[Removing a.out...]$(COLOR_LIMITER)
 	@rm -f a.out 
+	@rm -f output.txt
