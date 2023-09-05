@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:29:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/09/04 10:24:58 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:03:48 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	test1(void)
 
 	int	x = 1234;
 
-	my_return = ft_printf("low hexa: %#x | upper hexa: %#X\n", x, x);  // My Function
+	my_return = ft_printf("low hexa: %#x | upper hexa: %#X\n", x, x);
 	printf("my return: %d\n\n", my_return);
 
-	original_return = printf("low hexa: %#x | upper hexa: %#X\n", x, x);  // Original
+	original_return = printf("low hexa: %#x | upper hexa: %#X\n", x, x);
 	printf("original return: %d\n", original_return);
 }
 
@@ -34,10 +34,10 @@ void	test2(void)
 
 	int	x = 0;
 
-	my_return = ft_printf("low hexa: %#####x | upper hexa: %###X\n", x, x);  // My Function
+	my_return = ft_printf("low hexa: %#####x | upper hexa: %###X\n", x, x);
 	printf("my return: %d\n\n", my_return);
 
-	original_return = printf("low hexa: %##x | upper hexa: %##X\n", x, x);  // Original
+	original_return = printf("low hexa: %##x | upper hexa: %##X\n", x, x);
 	printf("original return: %d\n", original_return);
 }
 
@@ -49,10 +49,10 @@ void	test3(void)
 	int	x = 4242;
 	int	y = 123;
 
-	my_return = ft_printf("value x: %+d | value y: %+i\n", x, y);  // My Function
+	my_return = ft_printf("value x: %+d | value y: %+i\n", x, y);
 	printf("my return: %d\n\n", my_return);
 
-	original_return = printf("value x: %+d | value y: %+i\n", x, y);  // Original
+	original_return = printf("value x: %+d | value y: %+i\n", x, y);
 	printf("original return: %d\n", original_return);
 }
 
@@ -64,10 +64,10 @@ void	test4(void)
 	int	x = -4242;
 	int	y = 0;
 
-	my_return = ft_printf("value x: %+d | value y: %+i\n", x, y);  // My Function
+	my_return = ft_printf("value x: %+d | value y: %+i\n", x, y);
 	printf("my return: %d\n\n", my_return);
 
-	original_return = printf("value x: %+d | value y: %+i\n", x, y);  // Original
+	original_return = printf("value x: %+d | value y: %+i\n", x, y);
 	printf("original return: %d\n", original_return);
 }
 
@@ -79,10 +79,10 @@ void	test5(void)
 	int	x = 4242;
 	int	y = 123;
 
-	my_return = ft_printf("value x: % d | value y: % i\n", x, y);  // My Function
+	my_return = ft_printf("value x: % d | value y: % i\n", x, y);
 	printf("my return: %d\n\n", my_return);
 
-	original_return = printf("value x: % d | value y: % i\n", x, y);  // Original
+	original_return = printf("value x: % d | value y: % i\n", x, y);
 	printf("original return: %d\n", original_return);
 }
 
@@ -94,26 +94,12 @@ void	test6(void)
 	int	x = -4242;
 	int	y = 0;
 
-	my_return = ft_printf("value x: % d | value y: % i\n", x, y);  // My Function
+	my_return = ft_printf("value x: % d | value y: % i\n", x, y);
 	printf("my return: %d\n\n", my_return);
 
-	original_return = printf("value x: % d | value y: % i\n", x, y);  // Original
+	original_return = printf("value x: % d | value y: % i\n", x, y);
 	printf("original return: %d\n", original_return);
 }
-
-// void	test7(void)
-// {
-// 	int	my_return;
-// 	int	original_return;
-
-// 	char	*string = "Hello World";
-
-// 	my_return = ft_printf("value: % 1s\n", string);  // My Function
-// 	printf("my return: %d\n\n", my_return);
-
-// 	original_return = printf("value: % 1s\n", string);  // Original
-// 	printf("original return: %d\n", original_return);
-// }
 
 int main(void)
 {
@@ -129,7 +115,5 @@ int main(void)
 	test5();
 	printf("\n=============== Test 06 ===============\n");
 	test6();
-	// printf("\n=============== Test 07 ===============\n");
-	// test7();
 	return (0);
 }
