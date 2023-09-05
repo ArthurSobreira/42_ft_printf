@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:29:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/09/05 15:03:48 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/09/05 16:02:26 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,23 @@ void	test1(void)
 
 	int	x = 1234;
 
-	my_return = ft_printf("low hexa: %#x | upper hexa: %#X\n", x, x);
-	printf("my return: %d\n\n", my_return);
+	freopen("output.txt", "w", stdout);
 
+	my_return = ft_printf("low hexa: %#x | upper hexa: %#X\n", x, x);
 	original_return = printf("low hexa: %#x | upper hexa: %#X\n", x, x);
-	printf("original return: %d\n", original_return);
+
+	freopen("/dev/tty", "w", stdout);
+
+	if (my_return == original_return)
+	{
+		printf("\033[32m[Success]\033[0m ");
+		printf("Expected: %d | Result: %d\n", my_return, original_return);
+	}
+	else
+	{
+		printf("\033[31m[Fail]\033[0m ");
+		printf("Expected: %d | Result: %d\n", my_return, original_return);
+	}
 }
 
 void	test2(void)
@@ -34,11 +46,23 @@ void	test2(void)
 
 	int	x = 0;
 
-	my_return = ft_printf("low hexa: %#####x | upper hexa: %###X\n", x, x);
-	printf("my return: %d\n\n", my_return);
+	freopen("output.txt", "w", stdout);
 
+	my_return = ft_printf("low hexa: %#####x | upper hexa: %###X\n", x, x);
 	original_return = printf("low hexa: %##x | upper hexa: %##X\n", x, x);
-	printf("original return: %d\n", original_return);
+
+	freopen("/dev/tty", "w", stdout);
+
+	if (my_return == original_return)
+	{
+		printf("\033[32m[Success]\033[0m ");
+		printf("Expected: %d | Result: %d\n", my_return, original_return);
+	}
+	else
+	{
+		printf("\033[31m[Fail]\033[0m ");
+		printf("Expected: %d | Result: %d\n", my_return, original_return);
+	}
 }
 
 void	test3(void)
@@ -49,11 +73,23 @@ void	test3(void)
 	int	x = 4242;
 	int	y = 123;
 
-	my_return = ft_printf("value x: %+d | value y: %+i\n", x, y);
-	printf("my return: %d\n\n", my_return);
+	freopen("output.txt", "w", stdout);
 
+	my_return = ft_printf("value x: %+d | value y: %+i\n", x, y);
 	original_return = printf("value x: %+d | value y: %+i\n", x, y);
-	printf("original return: %d\n", original_return);
+
+	freopen("/dev/tty", "w", stdout);
+
+	if (my_return == original_return)
+	{
+		printf("\033[32m[Success]\033[0m ");
+		printf("Expected: %d | Result: %d\n", my_return, original_return);
+	}
+	else
+	{
+		printf("\033[31m[Fail]\033[0m ");
+		printf("Expected: %d | Result: %d\n", my_return, original_return);
+	}
 }
 
 void	test4(void)
@@ -64,11 +100,23 @@ void	test4(void)
 	int	x = -4242;
 	int	y = 0;
 
-	my_return = ft_printf("value x: %+d | value y: %+i\n", x, y);
-	printf("my return: %d\n\n", my_return);
+	freopen("output.txt", "w", stdout);
 
+	my_return = ft_printf("value x: %+d | value y: %+i\n", x, y);
 	original_return = printf("value x: %+d | value y: %+i\n", x, y);
-	printf("original return: %d\n", original_return);
+
+	freopen("/dev/tty", "w", stdout);
+
+	if (my_return == original_return)
+	{
+		printf("\033[32m[Success]\033[0m ");
+		printf("Expected: %d | Result: %d\n", my_return, original_return);
+	}
+	else
+	{
+		printf("\033[31m[Fail]\033[0m ");
+		printf("Expected: %d | Result: %d\n", my_return, original_return);
+	}
 }
 
 void	test5(void)
@@ -79,11 +127,23 @@ void	test5(void)
 	int	x = 4242;
 	int	y = 123;
 
-	my_return = ft_printf("value x: % d | value y: % i\n", x, y);
-	printf("my return: %d\n\n", my_return);
+	freopen("output.txt", "w", stdout);
 
+	my_return = ft_printf("value x: % d | value y: % i\n", x, y);
 	original_return = printf("value x: % d | value y: % i\n", x, y);
-	printf("original return: %d\n", original_return);
+
+	freopen("/dev/tty", "w", stdout);
+
+	if (my_return == original_return)
+	{
+		printf("\033[32m[Success]\033[0m ");
+		printf("Expected: %d | Result: %d\n", my_return, original_return);
+	}
+	else
+	{
+		printf("\033[31m[Fail]\033[0m ");
+		printf("Expected: %d | Result: %d\n", my_return, original_return);
+	}
 }
 
 void	test6(void)
@@ -94,26 +154,32 @@ void	test6(void)
 	int	x = -4242;
 	int	y = 0;
 
-	my_return = ft_printf("value x: % d | value y: % i\n", x, y);
-	printf("my return: %d\n\n", my_return);
+	freopen("output.txt", "w", stdout);
 
+	my_return = ft_printf("value x: % d | value y: % i\n", x, y);
 	original_return = printf("value x: % d | value y: % i\n", x, y);
-	printf("original return: %d\n", original_return);
+
+	freopen("/dev/tty", "w", stdout);
+
+	if (my_return == original_return)
+	{
+		printf("\033[32m[Success]\033[0m ");
+		printf("Expected: %d | Result: %d\n", my_return, original_return);
+	}
+	else
+	{
+		printf("\033[31m[Fail]\033[0m ");
+		printf("Expected: %d | Result: %d\n", my_return, original_return);
+	}
 }
 
 int main(void)
 {
-	printf("\n=============== Test 01 ===============\n");
 	test1();
-	printf("\n=============== Test 02 ===============\n");
 	test2();
-	printf("\n=============== Test 03 ===============\n");
 	test3();
-	printf("\n=============== Test 04 ===============\n");
 	test4();
-	printf("\n=============== Test 05 ===============\n");
 	test5();
-	printf("\n=============== Test 06 ===============\n");
 	test6();
 	return (0);
 }
