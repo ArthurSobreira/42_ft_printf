@@ -96,7 +96,7 @@ re: fclean
 
 .PHONY: all clean fclean re libft bonus
 
-# Just for test (delete later)
+# Just for test
 run_m: all
 	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
 	@echo $(GREEN)"| --------- Runing Mandatory Tests --------- |"$(COLOR_LIMITER)
