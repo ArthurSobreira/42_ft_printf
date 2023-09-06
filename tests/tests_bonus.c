@@ -6,12 +6,15 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:29:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/09/05 16:02:26 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/09/06 11:03:17 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
+#include "utils/get_next_line.h"
 #include <stdio.h>
+#include <fcntl.h>
+#include <string.h>
 
 void	test1(void)
 {
@@ -27,7 +30,16 @@ void	test1(void)
 
 	freopen("/dev/tty", "w", stdout);
 
-	if (my_return == original_return)
+	// Print Comparison
+	int	file_descriptor = open("output.txt", O_RDONLY);
+
+	char	*my_printf;
+	char	*original_printf;
+	
+	my_printf = get_next_line(file_descriptor);
+	original_printf = get_next_line(file_descriptor);
+
+	if ((my_return == original_return) && (strncmp(my_printf, original_printf, 20) == 0))
 	{
 		printf("\033[32m[Success]\033[0m ");
 		printf("Expected: %d | Result: %d\n", my_return, original_return);
@@ -37,6 +49,8 @@ void	test1(void)
 		printf("\033[31m[Fail]\033[0m ");
 		printf("Expected: %d | Result: %d\n", my_return, original_return);
 	}
+	free(my_printf);
+	free(original_printf);
 }
 
 void	test2(void)
@@ -53,7 +67,16 @@ void	test2(void)
 
 	freopen("/dev/tty", "w", stdout);
 
-	if (my_return == original_return)
+	// Print Comparison
+	int	file_descriptor = open("output.txt", O_RDONLY);
+
+	char	*my_printf;
+	char	*original_printf;
+	
+	my_printf = get_next_line(file_descriptor);
+	original_printf = get_next_line(file_descriptor);
+
+	if ((my_return == original_return) && (strncmp(my_printf, original_printf, 20) == 0))
 	{
 		printf("\033[32m[Success]\033[0m ");
 		printf("Expected: %d | Result: %d\n", my_return, original_return);
@@ -63,6 +86,8 @@ void	test2(void)
 		printf("\033[31m[Fail]\033[0m ");
 		printf("Expected: %d | Result: %d\n", my_return, original_return);
 	}
+	free(my_printf);
+	free(original_printf);
 }
 
 void	test3(void)
@@ -80,7 +105,16 @@ void	test3(void)
 
 	freopen("/dev/tty", "w", stdout);
 
-	if (my_return == original_return)
+	// Print Comparison
+	int	file_descriptor = open("output.txt", O_RDONLY);
+
+	char	*my_printf;
+	char	*original_printf;
+	
+	my_printf = get_next_line(file_descriptor);
+	original_printf = get_next_line(file_descriptor);
+
+	if ((my_return == original_return) && (strncmp(my_printf, original_printf, 20) == 0))
 	{
 		printf("\033[32m[Success]\033[0m ");
 		printf("Expected: %d | Result: %d\n", my_return, original_return);
@@ -90,6 +124,8 @@ void	test3(void)
 		printf("\033[31m[Fail]\033[0m ");
 		printf("Expected: %d | Result: %d\n", my_return, original_return);
 	}
+	free(my_printf);
+	free(original_printf);
 }
 
 void	test4(void)
@@ -107,7 +143,16 @@ void	test4(void)
 
 	freopen("/dev/tty", "w", stdout);
 
-	if (my_return == original_return)
+	// Print Comparison
+	int	file_descriptor = open("output.txt", O_RDONLY);
+
+	char	*my_printf;
+	char	*original_printf;
+	
+	my_printf = get_next_line(file_descriptor);
+	original_printf = get_next_line(file_descriptor);
+
+	if ((my_return == original_return) && (strncmp(my_printf, original_printf, 20) == 0))
 	{
 		printf("\033[32m[Success]\033[0m ");
 		printf("Expected: %d | Result: %d\n", my_return, original_return);
@@ -117,6 +162,8 @@ void	test4(void)
 		printf("\033[31m[Fail]\033[0m ");
 		printf("Expected: %d | Result: %d\n", my_return, original_return);
 	}
+	free(my_printf);
+	free(original_printf);
 }
 
 void	test5(void)
@@ -134,7 +181,16 @@ void	test5(void)
 
 	freopen("/dev/tty", "w", stdout);
 
-	if (my_return == original_return)
+	// Print Comparison
+	int	file_descriptor = open("output.txt", O_RDONLY);
+
+	char	*my_printf;
+	char	*original_printf;
+	
+	my_printf = get_next_line(file_descriptor);
+	original_printf = get_next_line(file_descriptor);
+
+	if ((my_return == original_return) && (strncmp(my_printf, original_printf, 20) == 0))
 	{
 		printf("\033[32m[Success]\033[0m ");
 		printf("Expected: %d | Result: %d\n", my_return, original_return);
@@ -144,6 +200,8 @@ void	test5(void)
 		printf("\033[31m[Fail]\033[0m ");
 		printf("Expected: %d | Result: %d\n", my_return, original_return);
 	}
+	free(my_printf);
+	free(original_printf);
 }
 
 void	test6(void)
@@ -161,7 +219,16 @@ void	test6(void)
 
 	freopen("/dev/tty", "w", stdout);
 
-	if (my_return == original_return)
+	// Print Comparison
+	int	file_descriptor = open("output.txt", O_RDONLY);
+
+	char	*my_printf;
+	char	*original_printf;
+	
+	my_printf = get_next_line(file_descriptor);
+	original_printf = get_next_line(file_descriptor);
+
+	if ((my_return == original_return) && (strncmp(my_printf, original_printf, 20) == 0))
 	{
 		printf("\033[32m[Success]\033[0m ");
 		printf("Expected: %d | Result: %d\n", my_return, original_return);
@@ -171,6 +238,8 @@ void	test6(void)
 		printf("\033[31m[Fail]\033[0m ");
 		printf("Expected: %d | Result: %d\n", my_return, original_return);
 	}
+	free(my_printf);
+	free(original_printf);
 }
 
 int main(void)
