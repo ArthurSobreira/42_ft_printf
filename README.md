@@ -15,11 +15,18 @@
 
 <br>
 
-## Project Files
+## Mandatory Files:
+* [`ft_printf.c`](mandatory/src/ft_printf.c) - main functions (project implementation)
+* [`ft_putchar.c`](mandatory/src/ft_putchar.c) - function to print a character in the stdin
+* [`ft_putnbr_base.c`](mandatory/src/ft_putnbr_base.c) - function to convert a number to the desired base
+* [`ft_putptr.c`](mandatory/src/ft_putptr.c) - function to prints an address in hexadecimal base
+* [`ft_putstr.c`](mandatory/src/ft_putstr.c) - function to print a string in the stdin
 
-### Mandatory:
-* [`ft_printf.c`](mandatory/src/ft_printf.c)      [`get_next_line_bonus.c`](src/get_next_line_bonus.c) - main functions (project implementation)
-* [`get_next_line.h`](include/get_next_line.h)      [`get_next_line_bonus.h`](include/get_next_line_bonus.h) - header file (prototypes and includes)
-* [`get_next_line_utils.c`](utils/get_next_line_utils.c)      [`get_next_line_utils_bonus.c`](utils/get_next_line_utils_bonus.c) - auxiliary functions (project requirements)
-
-### Bonus:
+## Bonus Files:
+* [`ft_printf_bonus.c`](bonus/src/ft_printf_bonus.c) - main functions (project implementation)
+* [`ft_putchar_bonus.c`](bonus/src/ft_putchar_bonus.c) - function to print a character in the stdin
+* [`ft_puthexa_bonus.c`](bonus/src/ft_puthexa_bonus.c) - function to convert a number to hexadecimal base, and print it with or without '#'
+* [`ft_putnbr_base_bonus.c`](bonus/src/ft_putnbr_base_bonus.c) - function to convert a number to the desired base
+* [`ft_putplus_space_bonus.c`](bonus/src/ft_putplus_space_bonus.c) - function to print a number in decimal base with or without '+' or 'space'
+* [`ft_putptr_bonus.c`](bonus/src/ft_putptr_bonus.c) - function to prints an address in hexadecimal base
+* [`ft_putstr_bonus.c`](bonus/src/ft_putstr_bonus.c) - function to print a string in the stdin
