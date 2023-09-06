@@ -101,14 +101,14 @@ run_m: all
 	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
 	@echo $(GREEN)"| --------- Runing Mandatory Tests --------- |"$(COLOR_LIMITER)
 	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
-	@$(CC) $(CFLAGS) tests/tests_mandatory.c $(NAME) -I $(MANDATORY_HEADER_PATH) && ./a.out
+	@$(CC) $(CFLAGS) tests/tests_mandatory.c tests/utils/* $(NAME) -I $(MANDATORY_HEADER_PATH) && ./a.out
 
 run_b: bonus
 	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
 	@echo $(GREEN)"| ----------- Runing Bonus Tests ----------- |"$(COLOR_LIMITER)
 	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
-	@$(CC) $(CFLAGS) tests/tests_bonus.c $(NAME) -I $(BONUS_HEADER_PATH) && ./a.out
+	@$(CC) $(CFLAGS) tests/tests_bonus.c tests/utils/* $(NAME) -I $(BONUS_HEADER_PATH) && ./a.out
 
 remove: fclean
 	@echo $(RED)[Removing a.out...]$(COLOR_LIMITER)
-	@rm -f a.out output.txt
+	@rm -f a.out output.txt tests/utils/get_next_line.h.gch
