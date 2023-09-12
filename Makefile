@@ -13,7 +13,7 @@ BONUS_SOURCES_PATH = ./bonus/src/
 # Colors Definition
 GREEN = "\033[32m"
 RED = "\033[31m"
-VIOLATE = "\033[38;5;208m"
+VIOLET = "\033[38;5;208m"
 COLOR_LIMITER = "\033[0m"
 
 # Sources Definition
@@ -60,9 +60,9 @@ $(BIN_PATH)%.o: $(MANDATORY_SOURCES_PATH)%.c
 	@$(CC) $(CFLAGS) -c $< -o $@ -I $(MANDATORY_HEADER_PATH)
 
 $(NAME): $(OBJECTS)
-	@echo $(VIOLATE) -------------------------------------------- $(COLOR_LIMITER)
-	@echo $(VIOLATE)"| libftprintf.a Was Generated Successfully!! |"$(COLOR_LIMITER)
-	@echo $(VIOLATE) -------------------------------------------- $(COLOR_LIMITER)
+	@echo $(VIOLET) -------------------------------------------- $(COLOR_LIMITER)
+	@echo $(VIOLET)"| libftprintf.a Was Generated Successfully!! |"$(COLOR_LIMITER)
+	@echo $(VIOLET) -------------------------------------------- $(COLOR_LIMITER)
 	@echo " "
 	@ar rcs $(NAME) $?
 
