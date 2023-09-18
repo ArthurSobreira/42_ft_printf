@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:29:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/09/18 09:38:52 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/09/18 09:44:16 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,18 +51,15 @@ void	test_char(char c1, char c2, char c3, char c4, char c5)
 	free(original_printf);
 }
 
-void	test2(void)
+void	test_string(char *s1, char *s2, char *s3, char *s4, char *s5)
 {
 	int	my_return;
 	int	original_return;
 
-	char	*str1 = "boas";
-	char	*str2 = "legais";
-
 	freopen("output.txt", "w", stdout);
 
-	my_return = ft_printf("Muitas %s %s %s Coisas\n", str1, str2, str1);
-	original_return = printf("Muitas %s %s %s Coisas\n", str1, str2, str1);
+	my_return = ft_printf("testing %s %s %s %s %s testing\n", s1, s2, s3, s4, s5);
+	original_return = printf("testing %s %s %s %s %s testing\n", s1, s2, s3, s4, s5);
 
 	freopen("/dev/tty", "w", stdout);
 
@@ -278,7 +275,7 @@ void	test7(void)
 int main(void)
 {
 	test_char('a', 'b', '+', ' ', '0');
-	// test2();
+	test_string("Hello", "World", "0123456789", "*-/^?+", "  ");
 	// test3();
 	// test4();
 	// test5();
