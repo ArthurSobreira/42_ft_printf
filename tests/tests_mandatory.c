@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:29:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/09/06 10:58:48 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/09/18 09:38:52 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,15 @@
 #include <fcntl.h>
 #include <string.h>
 
-void	test1(void)
+void	test_char(char c1, char c2, char c3, char c4, char c5)
 {
 	int		my_return;
 	int		original_return;
 
-	char	c = 'c';
-	char	v = 'v';
-	char	b = 'b';
-
 	freopen("output.txt", "w", stdout);
 
-	my_return = ft_printf("Muitas %c %c %c Coisas\n", c, v, b);
-	original_return = printf("Muitas %c %c %c Coisas\n", c, v, b);
+	my_return = ft_printf("testing %c %c %c %c %c\n", c1, c2, c3, c4, c5);
+	original_return = printf("testing %c %c %c %c %c\n", c1, c2, c3, c4, c5);
 
 	freopen("/dev/tty", "w", stdout);
 
@@ -281,12 +277,12 @@ void	test7(void)
 
 int main(void)
 {
-	test1();
-	test2();
-	test3();
-	test4();
-	test5();
-	test6();
-	test7();
+	test_char('a', 'b', '+', ' ', '0');
+	// test2();
+	// test3();
+	// test4();
+	// test5();
+	// test6();
+	// test7();
 	return (0);
 }
