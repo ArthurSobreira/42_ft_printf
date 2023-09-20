@@ -2,7 +2,6 @@ NAME = libftprintf.a
 LIB_NAME = libft/libft.a
 CFLAGS = -Wall -Wextra -Werror
 
-
 # Path Definition
 BIN_PATH = ./bin/
 LIB_BIN_PATH = ./libft/bin/
