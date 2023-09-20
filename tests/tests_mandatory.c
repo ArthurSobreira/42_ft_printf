@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:29:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/09/18 09:44:16 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/09/20 09:36:09 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,18 +86,15 @@ void	test_string(char *s1, char *s2, char *s3, char *s4, char *s5)
 	free(original_printf);
 }
 
-void	test3(void)
+void	test_mix_char_string(char c1, char c2, char c3, char *s1, char *s2, char *s3)
 {
 	int	my_return;
 	int	original_return;
 
-	char	x = 'X';
-	char	*str1 = "Men";
-
 	freopen("output.txt", "w", stdout);
 
-	my_return = ft_printf("%c-%s Revolution\n", x, str1);
-	original_return = printf("%c-%s Revolution\n", x, str1);
+	my_return = ft_printf("testing %c %s %c %s %c %s\n", c1, s1, c2, s2, c3, s3);
+	original_return = printf("testing %c %s %c %s %c %s\n", c1, s1, c2, s2, c3, s3);
 
 	freopen("/dev/tty", "w", stdout);
 
@@ -124,15 +121,15 @@ void	test3(void)
 	free(original_printf);
 }
 
-void	test4(void)
+void	test_percent(void)
 {
 	int	my_return;
 	int	original_return;
 
 	freopen("output.txt", "w", stdout);
 
-	my_return = ft_printf("%% %% %% %%\n");
-	original_return = printf("%% %% %% %%\n");
+	my_return = ft_printf("testing %% %% %% %% %% %%\n");
+	original_return = printf("testing %% %% %% %% %% %%\n");
 
 	freopen("/dev/tty", "w", stdout);
 
@@ -148,12 +145,12 @@ void	test4(void)
 	if ((my_return == original_return) && (strncmp(my_printf, original_printf, 20) == 0))
 	{
 		printf("\033[32m[Success]\033[0m ");
-		printf("Expected: %d  | Result: %d\n", my_return, original_return);
+		printf("Expected: %d | Result: %d\n", my_return, original_return);
 	}
 	else
 	{
 		printf("\033[31m[Fail]\033[0m ");
-		printf("Expected: %d  | Result: %d\n", my_return, original_return);
+		printf("Expected: %d | Result: %d\n", my_return, original_return);
 	}
 	free(my_printf);
 	free(original_printf);
@@ -276,8 +273,8 @@ int main(void)
 {
 	test_char('a', 'b', '+', ' ', '0');
 	test_string("Hello", "World", "0123456789", "*-/^?+", "  ");
-	// test3();
-	// test4();
+	test_mix_char_string('a', '9', ' ', "*-/^?+", "Hello World", "0123456789");
+	test_percent();
 	// test5();
 	// test6();
 	// test7();
