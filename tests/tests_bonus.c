@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:29:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/09/21 14:59:25 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/09/21 15:12:15 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,23 @@
 #include <fcntl.h>
 #include <string.h>
 
-static	void	test_sharp_flag(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6);
+static	void	test1_sharp_flag(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6);
+static	void	test2_sharp_flag(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6);
+static	void	test1_plus_flag(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6);
+static	void	test2_plus_flag(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6);
 
 int main(void)
 {
-	test_sharp_flag(1234, -1234, 0, -0, 99999, -999999);
-	// test2();
-	// test3();
-	// test4();
+	test1_sharp_flag(1234, -1234, 0, -0, 99999, -999999);
+	test2_sharp_flag(1234, -1234, 0, -0, 99999, -999999);
+	test1_plus_flag(1234, -1234, 0, -0, 99999, -999999);
+	test2_plus_flag(1234, -1234, 0, -0, 99999, -999999);
 	// test5();
 	// test6();
 	return (0);
 }
 
-static	void	test_sharp_flag(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6)
+static	void	test1_sharp_flag(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6)
 {
 	int	my_return;
 	int	original_return;
@@ -64,17 +67,15 @@ static	void	test_sharp_flag(int n1, int n2, int n3, short n4, unsigned int n5, u
 	free(original_printf);
 }
 
-void	test2(void)
+static	void	test2_sharp_flag(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6)
 {
 	int	my_return;
 	int	original_return;
 
-	int	x = 0;
-
 	freopen("output.txt", "w", stdout);
 
-	my_return = ft_printf("low hexa: %#####x | upper hexa: %###X\n", x, x);
-	original_return = printf("low hexa: %##x | upper hexa: %##X\n", x, x);
+	my_return = ft_printf("testing %###x %###X %##x %##X %#x %#X\n", n1, n2, n3, n4, n5, n6);
+	original_return = printf("testing %###x %###X %##x %##X %#x %#X\n", n1, n2, n3, n4, n5, n6);
 
 	freopen("/dev/tty", "w", stdout);
 
@@ -101,18 +102,15 @@ void	test2(void)
 	free(original_printf);
 }
 
-void	test3(void)
+static	void	test1_plus_flag(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6)
 {
 	int	my_return;
 	int	original_return;
 
-	int	x = 4242;
-	int	y = 123;
-
 	freopen("output.txt", "w", stdout);
 
-	my_return = ft_printf("value x: %+d | value y: %+i\n", x, y);
-	original_return = printf("value x: %+d | value y: %+i\n", x, y);
+	my_return = ft_printf("testing %+d %++d %+++d %++++d %d %d\n", n1, n2, n3, n4, n5, n6);
+	original_return = printf("testing %+d %++d %+++d %++++d %d %d\n", n1, n2, n3, n4, n5, n6);
 
 	freopen("/dev/tty", "w", stdout);
 
@@ -139,18 +137,15 @@ void	test3(void)
 	free(original_printf);
 }
 
-void	test4(void)
+static	void	test2_plus_flag(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6)
 {
 	int	my_return;
 	int	original_return;
 
-	int	x = -4242;
-	int	y = 0;
-
 	freopen("output.txt", "w", stdout);
 
-	my_return = ft_printf("value x: %+d | value y: %+i\n", x, y);
-	original_return = printf("value x: %+d | value y: %+i\n", x, y);
+	my_return = ft_printf("testing %+i %++i %+++i %++++i %i %i\n", n1, n2, n3, n4, n5, n6);
+	original_return = printf("testing %+i %++i %+++i %++++i %i %i\n", n1, n2, n3, n4, n5, n6);
 
 	freopen("/dev/tty", "w", stdout);
 
