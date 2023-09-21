@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:29:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/09/21 12:05:30 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:14:05 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,26 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <string.h>
+
+void	test_char(char c1, char c2, char c3, char c4, char c5);
+void	test_string(char *s1, char *s2, char *s3, char *s4, char *s5);
+void	test_mix_char_string(char c1, char c2, char c3, char *s1, char *s2, char *s3);
+void	test_percent(void);
+void	test_dec_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6);
+void	test_int_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6);
+void	test_hex_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6);
+
+int main(void)
+{
+	test_char('a', 'b', '+', ' ', '0');
+	test_string("Hello", "World", "0123456789", "*-/^?+", "  ");
+	test_mix_char_string('a', '9', ' ', "*-/^?+", "Hello World", "0123456789");
+	test_percent();
+	test_dec_number(1234, -1234, 0, -0, 99999, -999999);
+	test_int_number(1234, -1234, 0, -0, 99999, -999999);
+	test_hex_number(1234, -1234, 0, -0, 99999, -999999);
+	return (0);
+}
 
 void	test_char(char c1, char c2, char c3, char c4, char c5)
 {
@@ -259,16 +279,4 @@ void	test_hex_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned
 	}
 	free(my_printf);
 	free(original_printf);
-}
-
-int main(void)
-{
-	test_char('a', 'b', '+', ' ', '0');
-	test_string("Hello", "World", "0123456789", "*-/^?+", "  ");
-	test_mix_char_string('a', '9', ' ', "*-/^?+", "Hello World", "0123456789");
-	test_percent();
-	test_dec_number(1234, -1234, 0, -0, 99999, -999999);
-	test_int_number(1234, -1234, 0, -0, 99999, -999999);
-	test_hex_number(1234, -1234, 0, -0, 99999, -999999);
-	return (0);
 }
