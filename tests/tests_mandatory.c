@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:29:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/09/21 12:14:05 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/09/21 14:55:58 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 #include <fcntl.h>
 #include <string.h>
 
-void	test_char(char c1, char c2, char c3, char c4, char c5);
-void	test_string(char *s1, char *s2, char *s3, char *s4, char *s5);
-void	test_mix_char_string(char c1, char c2, char c3, char *s1, char *s2, char *s3);
-void	test_percent(void);
-void	test_dec_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6);
-void	test_int_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6);
-void	test_hex_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6);
+static	void	test_char(char c1, char c2, char c3, char c4, char c5);
+static	void	test_string(char *s1, char *s2, char *s3, char *s4, char *s5);
+static	void	test_mix_char_string(char c1, char c2, char c3, char *s1, char *s2, char *s3);
+static	void	test_percent(void);
+static	void	test_dec_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6);
+static	void	test_int_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6);
+static	void	test_hex_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6);
 
 int main(void)
 {
@@ -36,7 +36,7 @@ int main(void)
 	return (0);
 }
 
-void	test_char(char c1, char c2, char c3, char c4, char c5)
+static	void	test_char(char c1, char c2, char c3, char c4, char c5)
 {
 	int		my_return;
 	int		original_return;
@@ -71,7 +71,7 @@ void	test_char(char c1, char c2, char c3, char c4, char c5)
 	free(original_printf);
 }
 
-void	test_string(char *s1, char *s2, char *s3, char *s4, char *s5)
+static	void	test_string(char *s1, char *s2, char *s3, char *s4, char *s5)
 {
 	int	my_return;
 	int	original_return;
@@ -106,7 +106,7 @@ void	test_string(char *s1, char *s2, char *s3, char *s4, char *s5)
 	free(original_printf);
 }
 
-void	test_mix_char_string(char c1, char c2, char c3, char *s1, char *s2, char *s3)
+static	void	test_mix_char_string(char c1, char c2, char c3, char *s1, char *s2, char *s3)
 {
 	int	my_return;
 	int	original_return;
@@ -141,7 +141,7 @@ void	test_mix_char_string(char c1, char c2, char c3, char *s1, char *s2, char *s
 	free(original_printf);
 }
 
-void	test_percent(void)
+static	void	test_percent(void)
 {
 	int	my_return;
 	int	original_return;
@@ -176,7 +176,7 @@ void	test_percent(void)
 	free(original_printf);
 }
 
-void	test_dec_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6)
+static	void	test_dec_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6)
 {
 	int	my_return;
 	int	original_return;
@@ -211,7 +211,7 @@ void	test_dec_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned
 	free(original_printf);
 }
 
-void	test_int_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6)
+static	void	test_int_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6)
 {
 	int	my_return;
 	int	original_return;
@@ -246,7 +246,7 @@ void	test_int_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned
 	free(original_printf);
 }
 
-void	test_hex_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6)
+static	void	test_hex_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6)
 {
 	int	my_return;
 	int	original_return;
