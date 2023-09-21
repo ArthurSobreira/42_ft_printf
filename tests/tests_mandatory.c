@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:29:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/09/20 09:36:09 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/09/21 10:00:43 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,18 +156,15 @@ void	test_percent(void)
 	free(original_printf);
 }
 
-void	test5(void)
+void	test_dec_number(int n1, int n2, int n3, short n4, long n5, unsigned long n6)
 {
 	int	my_return;
 	int	original_return;
-
-	int	x = 42;
-	int	y = 21;
-
+	
 	freopen("output.txt", "w", stdout);
 
-	my_return = ft_printf("x: %d, y: %d\n", x, y);
-	original_return = printf("x: %d, y: %d\n", x, y);
+	my_return = ft_printf("testing %d %d %d %d %d %d\n", n1, n2, n3, n4, n5, n6);
+	original_return = printf("testing %d %d %d %d %d %d\n", n1, n2, n3, n4, n5, n6);
 
 	freopen("/dev/tty", "w", stdout);
 
