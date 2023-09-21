@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:29:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/09/21 10:00:43 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:00:14 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,7 +156,7 @@ void	test_percent(void)
 	free(original_printf);
 }
 
-void	test_dec_number(int n1, int n2, int n3, short n4, long n5, unsigned long n6)
+void	test_dec_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6)
 {
 	int	my_return;
 	int	original_return;
@@ -272,7 +272,7 @@ int main(void)
 	test_string("Hello", "World", "0123456789", "*-/^?+", "  ");
 	test_mix_char_string('a', '9', ' ', "*-/^?+", "Hello World", "0123456789");
 	test_percent();
-	// test5();
+	test_dec_number(1234, -1234, 0, -0, 99999, -999999);
 	// test6();
 	// test7();
 	return (0);
