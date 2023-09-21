@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:29:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/09/21 12:00:14 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:02:40 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,18 +191,15 @@ void	test_dec_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned
 	free(original_printf);
 }
 
-void	test6(void)
+void	test_int_number(int n1, int n2, int n3, short n4, unsigned int n5, unsigned int n6)
 {
 	int	my_return;
 	int	original_return;
 
-	int	x = 180;
-	int	y = 240;
-
 	freopen("output.txt", "w", stdout);
 
-	my_return = ft_printf("x: %i, y: %i\n", x, y);
-	original_return = printf("x: %i, y: %i\n", x, y);
+	my_return = ft_printf("testing %i %i %i %i %i %i\n", n1, n2, n3, n4, n5, n6);
+	original_return = printf("testing %i %i %i %i %i %i\n", n1, n2, n3, n4, n5, n6);
 
 	freopen("/dev/tty", "w", stdout);
 
@@ -273,7 +270,7 @@ int main(void)
 	test_mix_char_string('a', '9', ' ', "*-/^?+", "Hello World", "0123456789");
 	test_percent();
 	test_dec_number(1234, -1234, 0, -0, 99999, -999999);
-	// test6();
+	test_int_number(1234, -1234, 0, -0, 99999, -999999);
 	// test7();
 	return (0);
 }
