@@ -109,6 +109,6 @@ run_b: bonus
 	@echo $(GREEN) -------------------------------------------- $(COLOR_LIMITER)
 	@$(CC) $(CFLAGS) tests/tests_bonus.c tests/utils/* $(NAME) -I $(BONUS_HEADER_PATH) && ./a.out
 
-remove: fclean
-	@echo $(RED)[Removing a.out...]$(COLOR_LIMITER)
+rm_test: fclean
+	@echo $(RED)[Removing test file...]$(COLOR_LIMITER)
 	@rm -f a.out output.txt tests/utils/get_next_line.h.gch
