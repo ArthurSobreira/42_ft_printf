@@ -33,12 +33,12 @@
 ## Run the Program
 * Make sure you clone the repository with the following command:
 
-```
-git clone git@github.com:ArthurSobreira/42_ft_printf.git
+```bash
+$> git clone git@github.com:ArthurSobreira/42_ft_printf.git
 ```
 
 * Once cloned, to compile a simple test rule, run one of the following commands:
 
-```
-make run_m / make run_b
+```bash
+$> make run_m / make run_b
 ```
