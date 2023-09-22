@@ -40,5 +40,6 @@ $> git clone git@github.com:ArthurSobreira/42_ft_printf.git
 * Once cloned, to compile a simple test rule, run one of the following commands:
 
 ```bash
-$> make run_m / make run_b
+$> make run_m (mandatory tests)
+$> make run_b (bonus tests)
 ```
