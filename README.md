@@ -1,7 +1,7 @@
 <div align="center"><h1>Ft_Printf [110 / 100]</h1></div>
 
 <div align="center">
-   <a href="https://github.com/ArthurSobreira/42_libft" target="_blank">
+   <a href="https://github.com/ArthurSobreira/42_ft_printf" target="_blank">
       <img height=170 src="https://github.com/byaliego/42-project-badges/blob/main/badges/ft_printfm.png" hspace = "10">
    </a>
 </div>
