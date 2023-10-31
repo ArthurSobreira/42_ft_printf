@@ -8,7 +8,7 @@
 
 ## Summary
 > <i>The third project on the 42sp fundamentals track, <strong>Ft_Printf</strong>, is based on the creation</i>
-> <i>of a function that mimics the original behavior of <strong>printf()</strong>, from <strong>Standard Input / Output</strong> library.</i>
+> <i>of a function that mimics the original behavior of <strong>printf()</strong>, from the <strong>Standard Input / Output</strong> library.</i>
 > <i>This project's main objective is to introduce the use of <strong>variadic parameters</strong>, in addition to reinforcing concepts such</i>
 > <i>as compilation with folder structure, recursive functions, and more.</i>
 
